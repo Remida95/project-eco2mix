@@ -3,12 +3,14 @@ import csv
 import os
 from dotenv import load_dotenv
 import psycopg2
-from datetime import date
+from datetime import date, timedelta
 
 # On charge les variables du fichier .env dans l'environnement Python
 load_dotenv()
 
 aujourdhui = date.today().isoformat()
+
+hier = (date.today() - timedelta(days=1)).isoformat()
 
 url = "https://opendata.reseaux-energies.fr/api/records/1.0/search/"
 
@@ -71,8 +73,8 @@ print("Connexion à PostgreSQL réussie !")
 # On récupère les données récentes de l'API
 parametres = {
     "dataset": "eco2mix-national-tr",
-    "rows": 100,
-    "q": f"date_heure >= {aujourdhui}"
+    "rows": 1000,
+    "q": f"date_heure >= {hier}"
 }
 reponse = requests.get(url, params=parametres).json()
 
