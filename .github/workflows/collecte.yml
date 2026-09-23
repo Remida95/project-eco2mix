@@ -3,7 +3,7 @@ name: Collecte eco2mix
 on:
   schedule:
   - cron: '*/15 * * * *'
-  worklfow_dispatch:
+  workflow_dispatch:
 
 jobs:
   collecte:
