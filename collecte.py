@@ -17,7 +17,7 @@ url = "https://opendata.reseaux-energies.fr/api/records/1.0/search/"
 fichier = "eco2mix_national.csv"
 
 
-
+"""
 with open(fichier, "w", newline="", encoding="utf-8") as fichier_csv:
 
     ecrivain = None
@@ -56,7 +56,7 @@ with open(fichier, "w", newline="", encoding="utf-8") as fichier_csv:
             ecrivain.writerow(i["fields"])
 
 print("\nTerminé !")
-print("Fichier créé :", fichier)
+print("Fichier créé :", fichier)"""
 
 # On se connecte à PostgreSQL en récupérant les identifiants depuis les variables chargées
 connexion = psycopg2.connect(
